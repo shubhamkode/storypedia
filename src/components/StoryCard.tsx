@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Story{
-    id: string, 
+    id: number, 
     headline: string,
     shortDesc: string,
     longDesc: string,
@@ -18,8 +18,8 @@ const StoryCard:React.FC<IStoryCardProps> = ({story}):JSX.Element =>{
     return (
         <div className='p-2 mb-3 border rounded-md cursor-pointer min-w-[300px]'>
             <a className="block">
-                <img className='object-cover w-full h-56 shadow-xl rounded-xl'
-                    src="https://www.hyperui.dev/photos/university-1.jpeg"
+                <img className='object-cover w-full shadow-xl h-[300px] rounded-xl'
+                    src={`https://picsum.photos/id/${Math.floor(Math.random()*100)}/500`}
                 />
                 <div className="p-4">
                     <h5 className="text-2xl font-bold text-slate-300">

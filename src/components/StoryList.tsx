@@ -8,12 +8,6 @@ interface IStoryListProps{
 
 const StoryList:React.FC<IStoryListProps> = ({storyData}):JSX.Element =>{
     return (
-        // <div className="flex-wrap justify-center gap-4 md:flex md:mt-16">
-        //     {storyData.map((story) => (
-        //         <StoryCard key={story.id} story={story}/>)
-        //     )
-        //     }
-        // </div>
         <div id="scrollableDiv"
             className="flex flex-col h-screen overflow-auto md:mt-16 md:h-full">
             <InfiniteScroll
