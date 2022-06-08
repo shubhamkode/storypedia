@@ -20,7 +20,7 @@ const Header:React.FC<IHeaderProps> = ():JSX.Element =>{
     <div>
         {/* sideMenu */}
             { menuOpen && (<div className="cursor-pointer h-full w-[20vw] fixed top-0 left-0" onClick={toggleMenu}></div>)}
-       <div className={`bg-[#5A20CB] w-[80vw] fixed top-0 right-0 h-full z-10 p-5 duration-100 ease-in-out rounded text-slate-200 ${menuOpen ? 'translate-x-0':'translate-x-full'}`}>
+       <div className={`bg-[#5A20CB] w-[80vw] fixed top-0 right-0 h-full z-20 p-5 duration-100 ease-in-out rounded text-slate-200 ${menuOpen ? 'translate-x-0':'translate-x-full'}`}>
             <div className="flex justify-between p-3 border-b-4 rounded">
             <h2 className="text-4xl font-bold"> Menu </h2>
             <div className="pt-3 duration-300 cursor-pointer hover:text-white " onClick={toggleMenu}>{closeSvg}</div>
@@ -34,14 +34,24 @@ const Header:React.FC<IHeaderProps> = ():JSX.Element =>{
                     </div>
         </div>
         {/* header */}
-        <div className="fixed top-0 left-0 right-0 p-3 text-white">
+        <div className="fixed top-0 left-0 right-0 z-10 p-3 text-white">
             <div className="flex justify-between p-2 border border-b-4 rounded border-b-slate-200">
                 <Link to="/">
-                    <div className="text-4xl font-bold tracking-wider cursor-pointer md:text-6xl ">StoryPedia</div>
+                    <div className="text-4xl font-bold tracking-wider cursor-pointer md:text-6xl md:p-6 ">StoryPedia</div>
                 </Link>
                     <div
                         className='p-3 cursor-pointer md:hidden' onClick={toggleMenu}
                     >{menuSvg}</div>
+                    <div className="hidden md:flex">
+                        <ul className="flex flex-row items-center justify-center text-2xl">
+                            <li className="p-4 mr-3 duration-200 rounded cursor-pointer hover:bg-slate-400 hover:border-b-4 hover:border-b-gray-300">
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li className="p-4 mr-3 duration-200 rounded cursor-pointer hover:bg-slate-400 hover:border-b-4 hover:border-b-gray-300">
+                                <Link to="/contact">Contact</Link>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </div>
     </div>
